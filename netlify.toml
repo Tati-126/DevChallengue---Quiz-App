@@ -1,0 +1,21 @@
+# Configuración de despliegue en Netlify
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Comando que Netlify ejecuta para construir la app.
+  command = "npm run build"
+  # Carpeta que se publica (Vite genera la build en /dist).
+  publish = "dist"
+
+[build.environment]
+  # Misma versión de Node que usamos en desarrollo y en la CI.
+  NODE_VERSION = "20"
+
+# Redirección para Single Page App (SPA):
+# Cualquier ruta desconocida sirve index.html para que React Router
+# maneje el enrutamiento del lado del cliente. Sin esto, recargar en
+# /quiz o /results daría un error 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
