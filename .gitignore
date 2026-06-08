@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Build
+dist/
+dist-ssr/
+
+# Tests / coverage
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / SO
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Variables de entorno
+.env
+.env.local
